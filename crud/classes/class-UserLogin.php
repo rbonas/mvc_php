@@ -272,6 +272,7 @@ class UserLogin
 	}
 	
 	/**
+	 * teste
 	 * Envia para uma página qualquer
 	 *
 	 * @final
