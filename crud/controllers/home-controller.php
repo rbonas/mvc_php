@@ -7,9 +7,9 @@
  */
 class HomeController extends MainController
 {
- 
+
 	/**
-	 * Carrega a página "/views/home/home-view.php"
+	 * Carrega a página "/views/home/index.php"
 	 */
     public function index() {
 		// Título da página
@@ -23,16 +23,16 @@ class HomeController extends MainController
 		/** Carrega os arquivos do view **/
 		
 		// /views/_includes/header.php
-                require ABSPATH . '/views/_includes/header.php';
+        require ABSPATH . '/views/_includes/header.php';
 		
 		// /views/_includes/menu.php
-                require ABSPATH . '/views/_includes/menu.php';
+        require ABSPATH . '/views/_includes/menu.php';
 		
 		// /views/home/home-view.php
-                require ABSPATH . '/views/home/home-view.php';
+        require ABSPATH . '/views/home/home-view.php';
 		
 		// /views/_includes/footer.php
-                require ABSPATH . '/views/_includes/footer.php';
+        require ABSPATH . '/views/_includes/footer.php';
 		
     } // index
 	

@@ -7,7 +7,7 @@
  */
 class NoticiasAdmModel extends MainModel
 {
- 
+
 	/**
 	 * $posts_per_page
 	 *
@@ -34,10 +34,10 @@ class NoticiasAdmModel extends MainModel
 		
 		// Configura o controlador
 		$this->controller = $controller;
- 
+
 		// Configura os parâmetros
 		$this->parametros = $this->controller->parametros;
- 
+
 		// Configura os dados do usuário
 		$this->userdata = $this->controller->userdata;
 	}
@@ -67,7 +67,7 @@ class NoticiasAdmModel extends MainModel
 		// Configura a página a ser exibida
 		$pagina = ! empty( $this->parametros[1] ) ? $this->parametros[1] : 1;
 		
-		// A paginação inicia do 0
+		// A páginação inicia do 0
 		$pagina--;
 		
 		// Configura o número de posts por página
@@ -248,7 +248,7 @@ class NoticiasAdmModel extends MainModel
 		
 		// :(
 		$this->form_msg = '<p class="error">Erro ao enviar dados!</p>';
- 
+
 	} // insere_noticia
 	
 	/**
@@ -420,7 +420,7 @@ class NoticiasAdmModel extends MainModel
 		if ( $current <= ( $last - $offset1 ) ) {
 			echo " ... <a href='$caminho_noticias$last'>$last</a>";
 		}
- 
+
 	} // paginacao
 	
 } // NoticiasAdmModel

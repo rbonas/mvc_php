@@ -2,17 +2,17 @@
 // Evita acesso direto a este arquivo
 if ( ! defined('ABSPATH')) exit; 
 ?>
- 
+
 <div class="wrap">
- 
+
 <?php
 // Número de posts por página
 $modelo->posts_por_pagina = 10;
- 
+
 // Lista notícias
 $lista = $modelo->listar_noticias(); 
 ?>
- 
+
 <?php foreach( $lista as $noticia ):?>
 	
 	<!-- Título -->
@@ -21,7 +21,7 @@ $lista = $modelo->listar_noticias();
 			<?php echo $noticia['noticia_titulo']?>
 		</a>
 	</h1>
- 
+
 	<?php 
 	// Verifica se estamos visualizando uma única notícia
 	if ( is_numeric( chk_array( $modelo->parametros, 0 ) ) ): // single
@@ -42,7 +42,7 @@ $lista = $modelo->listar_noticias();
 	<?php endif;  // single ?>
 	
 <?php endforeach; ?>
- 
+
 <?php $modelo->paginacao();?>
- 
+
 </div> <!-- .wrap -->

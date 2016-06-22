@@ -1,14 +1,14 @@
 <?php if ( ! defined('ABSPATH')) exit; ?>
- 
+
 <div class="wrap">
- 
+
 <?php
 // Carrega todos os métodos do modelo
 $modelo->validate_register_form();
 $modelo->get_register_form( chk_array( $parametros, 1 ) );
 $modelo->del_user( $parametros );
 ?>
- 
+
 <form method="post" action="">
 	<table class="form-table">
 		<tr>
@@ -44,13 +44,13 @@ $modelo->del_user( $parametros );
 		</tr>
 	</table>
 </form>
- 
+
 <?php 
 // Lista os usuários
 $lista = $modelo->get_user_list(); 
 ?>
- 
- 
+
+
 <table class="list-table">
 	<thead>
 		<tr>
@@ -65,7 +65,7 @@ $lista = $modelo->get_user_list();
 	<tbody>
 			
 		<?php foreach ($lista as $fetch_userdata): ?>
- 
+
 			<tr>
 			
 				<td> <?php echo $fetch_userdata['user_id'] ?> </td>
@@ -77,13 +77,12 @@ $lista = $modelo->get_user_list();
 					<a href="<?php echo HOME_URI ?>/user-register/index/edit/<?php echo $fetch_userdata['user_id'] ?>">Edit</a>
 					<a href="<?php echo HOME_URI ?>/user-register/index/del/<?php echo $fetch_userdata['user_id'] ?>">Delete</a>
 				</td>
- 
+
 			</tr>
 			
 		<?php endforeach;?>
 			
 	</tbody>
 </table>
- 
+
 </div> <!-- .wrap -->
- 

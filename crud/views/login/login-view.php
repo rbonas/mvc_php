@@ -1,13 +1,13 @@
 <?php if ( ! defined('ABSPATH')) exit; ?>
- 
+
 <div class="wrap">
- 
+
 <?php
 if ( $this->logged_in ) {
 	echo '<p class="alert">Logado</p>';
 }
 ?>
- 
+
 	<form method="post">
 		<table class="form-table">
 			<tr>

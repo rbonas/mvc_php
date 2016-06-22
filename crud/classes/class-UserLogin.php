@@ -73,16 +73,16 @@ class UserLogin
 			// Garante que é HTTP POST
 			$userdata['post'] = true;
 		}
- 
+
 		// Verifica se existe algum dado de usuário para conferir
 		if ( ! isset( $userdata ) || ! is_array( $userdata ) ) {
 		
-			// Remove qualquer sessão que possa existir sobre o usuário
+			// Desconfigura qualquer sessão que possa existir sobre o usuário
 			$this->logout();
 		
 			return;
 		}
- 
+
 		// Passa os dados do post para uma variável
 		if ( $userdata['post'] === true ) {
 			$post = true;
@@ -98,7 +98,7 @@ class UserLogin
 			$this->logged_in = false;
 			$this->login_error = null;
 		
-			// Remove qualquer sessão que possa existir sobre o usuário
+			// Desconfigura qualquer sessão que possa existir sobre o usuário
 			$this->logout();
 		
 			return;
@@ -112,7 +112,7 @@ class UserLogin
 			$this->logged_in = false;
 			$this->login_error = null;
 		
-			// Remove qualquer sessão que possa existir sobre o usuário
+			// Desconfigura qualquer sessão que possa existir sobre o usuário
 			$this->logout();
 		
 			return;
@@ -129,7 +129,7 @@ class UserLogin
 			$this->logged_in = false;
 			$this->login_error = 'Internal error.';
 		
-			// Remove qualquer sessão que possa existir sobre o usuário
+			// Desconfigura qualquer sessão que possa existir sobre o usuário
 			$this->logout();
 		
 			return;
@@ -146,7 +146,7 @@ class UserLogin
 			$this->logged_in = false;
 			$this->login_error = 'User do not exists.';
 		
-			// Remove qualquer sessão que possa existir sobre o usuário
+			// Desconfigura qualquer sessão que possa existir sobre o usuário
 			$this->logout();
 		
 			return;
@@ -160,7 +160,7 @@ class UserLogin
 				$this->logged_in = false;
 				$this->login_error = 'Wrong session ID.';
 				
-				// Remove qualquer sessão que possa existir sobre o usuário
+				// Desconfigura qualquer sessão que possa existir sobre o usuário
 				$this->logout();
 			
 				return;
@@ -190,7 +190,7 @@ class UserLogin
 				
 			// Obtém um array com as permissões de usuário
 			$_SESSION['userdata']['user_permissions'] = unserialize( $fetch['user_permissions'] );
- 
+
 			// Configura a propriedade dizendo que o usuário está logado
 			$this->logged_in = true;
 			
@@ -229,7 +229,7 @@ class UserLogin
 	/**
 	 * Logout
 	 *
-	 * Remove tudo do usuário.
+	 * Desconfigura tudo do usuárui.
 	 *
 	 * @param bool $redirect Se verdadeiro, redireciona para a página de login
 	 * @final
@@ -272,7 +272,6 @@ class UserLogin
 	}
 	
 	/**
-	 * teste
 	 * Envia para uma página qualquer
 	 *
 	 * @final
@@ -306,7 +305,7 @@ class UserLogin
 		if ( ! is_array( $user_permissions ) ) {
 			return;
 		}
- 
+
 		// Se o usuário não tiver permissão
 		if ( ! in_array( $required, $user_permissions ) ) {
 			// Retorna falso

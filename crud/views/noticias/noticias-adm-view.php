@@ -1,33 +1,33 @@
 <?php 
 // Evita acesso direto a este arquivo
 if ( ! defined('ABSPATH')) exit;
- 
+
 // Configura as URLs
 $adm_uri = HOME_URI . '/noticias/adm/';
 $edit_uri = $adm_uri . 'edit/';
 $delete_uri = $adm_uri . 'del/';
- 
+
 		
 // Carrega o método para obter uma notícia
 $modelo->obtem_noticia();
- 
+
 // Carrega o método para inserir uma notícia
 $modelo->insere_noticia();
- 
+
 // Carrega o método para apagar a notícia
 $modelo->form_confirma = $modelo->apaga_noticia();
- 
+
 // Remove o limite de valores da lista de notícias
 $modelo->sem_limite = true;
 ?>
- 
+
 <div class="wrap">
- 
+
 	<?php 
 	// Mensagem de configuração caso o usuário tente apagar algo
 	echo $modelo->form_confirma;
 	?>
- 
+
 	<!-- Formulário de edição das notícias -->
 	<form method="post" action="" enctype="multipart/form-data">
 		<table class="form-table">
@@ -87,9 +87,9 @@ $modelo->sem_limite = true;
 	
 	<!-- LISTA AS NOTICIAS -->
 	<?php $lista = $modelo->listar_noticias(); ?>
- 
+
 	<table class="list-table">
- 
+
 		<?php foreach( $lista as $noticia ):?>
 			
 			<tr>
@@ -106,7 +106,7 @@ $modelo->sem_limite = true;
 			</tr>
 			
 		<?php endforeach; ?>
- 
+
 	</table>
- 
+
 </div> <!-- .wrap -->

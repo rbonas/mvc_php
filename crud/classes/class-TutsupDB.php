@@ -285,7 +285,7 @@ class TutsupDB
 		// The end :)
 		return;
 	} // update
- 
+
 	/**
 	 * Delete
 	 *
@@ -306,7 +306,7 @@ class TutsupDB
 		
 		// Inicia a declaração
 		$stmt = " DELETE FROM `$table` ";
- 
+
 		// Configura a declaração WHERE campo=valor
 		$where = " WHERE `$where_field` = ? ";
 		
@@ -315,7 +315,7 @@ class TutsupDB
 		
 		// O valor que vamos buscar para apagar
 		$values = array( $where_field_value );
- 
+
 		// Apaga
 		$delete = $this->query( $stmt, $values );
 		

@@ -7,7 +7,7 @@
  */
 class MainController extends UserLogin
 {
- 
+
 	/**
 	 * $db
 	 *
@@ -16,7 +16,7 @@ class MainController extends UserLogin
 	 * @access public
 	 */
 	public $db;
- 
+
 	/**
 	 * $phpass
 	 *
@@ -26,7 +26,7 @@ class MainController extends UserLogin
 	 * @access public
 	 */
 	public $phpass;
- 
+
 	/**
 	 * $title
 	 *
@@ -35,7 +35,7 @@ class MainController extends UserLogin
 	 * @access public
 	 */
 	public $title;
- 
+
 	/**
 	 * $login_required
 	 *
@@ -44,7 +44,7 @@ class MainController extends UserLogin
 	 * @access public
 	 */
 	public $login_required = false;
- 
+
 	/**
 	 * $permission_required
 	 *
@@ -53,7 +53,7 @@ class MainController extends UserLogin
 	 * @access public
 	 */
 	public $permission_required = 'any';
- 
+
 	/**
 	 * $parametros
 	 *
@@ -133,5 +133,5 @@ class MainController extends UserLogin
 		} // load_model
 		
 	} // load_model
- 
+
 } // class MainController

@@ -5,10 +5,10 @@
  * @package TutsupMVC
  * @since 0.1
  */
- 
+
 class UserRegisterModel
 {
- 
+
 	/**
 	 * $form_data
 	 *
@@ -17,7 +17,7 @@ class UserRegisterModel
 	 * @access public
 	 */	
 	public $form_data;
- 
+
 	/**
 	 * $form_msg
 	 *
@@ -26,7 +26,7 @@ class UserRegisterModel
 	 * @access public
 	 */	
 	public $form_msg;
- 
+
 	/**
 	 * $db
 	 *
@@ -35,7 +35,7 @@ class UserRegisterModel
 	 * @access public
 	 */
 	public $db;
- 
+
 	/**
 	 * Construtor
 	 * 
@@ -45,10 +45,9 @@ class UserRegisterModel
 	 * @access public
 	 */
 	public function __construct( $db = false ) {
-                // Carrega o BD
 		$this->db = $db;
 	}
- 
+
 	/**
 	 * Valida o formulário de envio
 	 * 
@@ -126,7 +125,7 @@ class UserRegisterModel
 		
 		// Verifica se as permissões tem algum valor inválido: 
 		// 0 a 9, A a Z e , . - _
-		if ( preg_match( '/[^0-9A-Za-z,.-_s ]/is', $this->form_data['user_permissions'] ) ) {
+		if ( preg_match( '/[^0-9A-Za-z\,\.\-\_\s ]/is', $this->form_data['user_permissions'] ) ) {
 			$this->form_msg = '<p class="form_error">Use just letters, numbers and a comma for permissions.</p>';
 			return;
 		}		
@@ -146,7 +145,7 @@ class UserRegisterModel
 		
 		// Se o ID do usuário não estiver vazio, atualiza os dados
 		if ( ! empty( $user_id ) ) {
- 
+
 			$query = $this->db->update('users', 'user_id', $user_id, array(
 				'user_password' => $password, 
 				'user_name' => chk_array( $this->form_data, 'user_name'), 
@@ -256,13 +255,13 @@ class UserRegisterModel
 	 * @access public
 	 */
 	public function del_user ( $parametros = array() ) {
- 
+
 		// O ID do usuário
 		$user_id = null;
 		
 		// Verifica se existe o parâmetro "del" na URL
 		if ( chk_array( $parametros, 0 ) == 'del' ) {
- 
+
 			// Mostra uma mensagem de confirmação
 			echo '<p class="alert">Tem certeza que deseja apagar este valor?</p>';
 			echo '<p><a href="' . $_SERVER['REQUEST_URI'] . '/confirma">Sim</a> | 

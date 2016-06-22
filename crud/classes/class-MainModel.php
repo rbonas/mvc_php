@@ -17,7 +17,7 @@ class MainModel
 	 * @access public
 	 */	
 	public $form_data;
- 
+
 	/**
 	 * $form_msg
 	 *
@@ -26,7 +26,7 @@ class MainModel
 	 * @access public
 	 */	
 	public $form_msg;
- 
+
 	/**
 	 * $form_confirma
 	 *
@@ -35,7 +35,7 @@ class MainModel
 	 * @access public
 	 */
 	public $form_confirma;
- 
+
 	/**
 	 * $db
 	 *
@@ -44,7 +44,7 @@ class MainModel
 	 * @access public
 	 */
 	public $db;
- 
+
 	/**
 	 * $controller
 	 *
@@ -53,7 +53,7 @@ class MainModel
 	 * @access public
 	 */
 	public $controller;
- 
+
 	/**
 	 * $parametros
 	 *
@@ -62,7 +62,7 @@ class MainModel
 	 * @access public
 	 */
 	public $parametros;
- 
+
 	/**
 	 * $userdata
 	 *
@@ -91,7 +91,7 @@ class MainModel
 		if ( $data ) {
 		
 			// Explode a data por -, /, : ou espaço
-			$data = preg_split('/-|/|s|:/', $data);
+			$data = preg_split('/\-|\/|\s|:/', $data);
 			
 			// Remove os espaços do começo e do fim dos valores
 			$data = array_map( 'trim', $data );
@@ -121,5 +121,5 @@ class MainModel
 		return $nova_data;
 	
 	} // inverte_data
- 
+
 } // MainModel

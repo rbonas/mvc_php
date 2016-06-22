@@ -17,10 +17,10 @@ class ExemploModel extends MainModel
 		
 		// Configura o controlador
 		$this->controller = $controller;
- 
+
 		// Configura os parâmetros
 		$this->parametros = $this->controller->parametros;
- 
+
 		// Configura os dados do usuário
 		$this->userdata = $this->controller->userdata;
 		

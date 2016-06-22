@@ -7,58 +7,54 @@
  */
 class NoticiasController extends MainController
 {
- 
-   /**
-    * $login_required
-    *
-    * Se a página precisa de login
-    *
-    * @access public
-    */
-    public $login_required = false;
- 
-   /**
-    * $permission_required
-    *
-    * Permissão necessária
-    *
-    * @access public
-    */
-    public $permission_required;
- 
-   /**
-    * INDEX
-    *
-    * Carrega a página "/views/noticias/index.php"
-    */
+
+	/**
+	 * $login_required
+	 *
+	 * Se a página precisa de login
+	 *
+	 * @access public
+	 */
+	public $login_required = false;
+
+	/**
+	 * $permission_required
+	 *
+	 * Permissão necessária
+	 *
+	 * @access public
+	 */
+	public $permission_required;
+
+	/**
+	 * Carrega a página "/views/noticias/index.php"
+	 */
     public function index() {
-	// Título da página
-	$this->title = 'Notícias';
+		// Título da página
+		$this->title = 'Notícias';
 	
-	// Carrega o modelo para este view
+		// Carrega o modelo para este view
         $modelo = $this->load_model('noticias/noticias-adm-model');
 				
-	/** Carrega os arquivos do view **/
+		/** Carrega os arquivos do view **/
 		
-	// /views/_includes/header.php
+		// /views/_includes/header.php
         require ABSPATH . '/views/_includes/header.php';
 		
-	// /views/_includes/menu.php
+		// /views/_includes/menu.php
         require ABSPATH . '/views/_includes/menu.php';
 		
-	// /views/noticias/index.php
+		// /views/noticias/index.php
         require ABSPATH . '/views/noticias/noticias-view.php';
 		
-	// /views/_includes/footer.php
+		// /views/_includes/footer.php
         require ABSPATH . '/views/_includes/footer.php';
 		
     } // index
 	
-   /**
-    * ADM
-    *
-    * Carrega a página "/views/noticias/noticias-adm-view.php"
-    */
+	/**
+	 * Carrega a página "/views/noticias/noticias-adm-view.php"
+	 */
     public function adm() {
 		// Page title
 		$this->title = 'Gerenciar notícias';
@@ -88,21 +84,21 @@ class NoticiasController extends MainController
 			return;
 		}
 	
-	// Carrega o modelo para este view
+		// Carrega o modelo para este view
         $modelo = $this->load_model('noticias/noticias-adm-model');
 		
-	/** Carrega os arquivos do view **/
+		/** Carrega os arquivos do view **/
 		
-	// /views/_includes/header.php
+		// /views/_includes/header.php
         require ABSPATH . '/views/_includes/header.php';
 		
-	// /views/_includes/menu.php
+		// /views/_includes/menu.php
         require ABSPATH . '/views/_includes/menu.php';
 		
-	// /views/noticias/index.php
+		// /views/noticias/index.php
         require ABSPATH . '/views/noticias/noticias-adm-view.php';
 		
-	// /views/_includes/footer.php
+		// /views/_includes/footer.php
         require ABSPATH . '/views/_includes/footer.php';
 		
     } // adm

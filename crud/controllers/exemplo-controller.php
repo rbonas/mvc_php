@@ -10,4 +10,9 @@ class ExemploController extends MainController
 		// Carrega o view
 		require_once ABSPATH . '/views/exemplo/exemplo-view.php';
 	}
+	
+	// URL: dominio.com/exemplo/outra-acao
+	public function OutraAcao() {
+		// Inclua seus models e views aqui
+	}
 }

@@ -7,7 +7,7 @@
  */
 class TutsupMVC
 {
- 
+
 	/**
 	 * $controlador
 	 *
@@ -88,7 +88,7 @@ class TutsupMVC
 			// FIM :)
 			return;
 		}
-		
+				
 		// Inclui o arquivo do controlador
 		require_once ABSPATH . '/controllers/' . $this->controlador . '.php';
 		
@@ -101,14 +101,17 @@ class TutsupMVC
 		if ( ! class_exists( $this->controlador ) ) {
 			// Página não encontrada
 			require_once ABSPATH . $this->not_found;
- 
+
 			// FIM :)
 			return;
 		} // class_exists
 		
-		// Cria o objeto da classe do controlador e envia os parâmetros
+		// Cria o objeto da classe do controlador e envia os parâmentros
 		$this->controlador = new $this->controlador( $this->parametros );
- 
+		
+		// Remove caracteres inválidos do nome da ação (método)
+		$this->acao = preg_replace( '/[^a-zA-Z]/i', '', $this->acao );
+		
 		// Se o método indicado existir, executa o método e envia os parâmetros
 		if ( method_exists( $this->controlador, $this->acao ) ) {
 			$this->controlador->{$this->acao}( $this->parametros );
@@ -150,8 +153,8 @@ class TutsupMVC
 			$path = $_GET['path'];
 			
 			// Limpa os dados
-                        $path = rtrim($path, '/');
-                        $path = filter_var($path, FILTER_SANITIZE_URL);
+            $path = rtrim($path, '/');
+            $path = filter_var($path, FILTER_SANITIZE_URL);
             
 			// Cria um array de parâmetros
 			$path = explode('/', $path);
